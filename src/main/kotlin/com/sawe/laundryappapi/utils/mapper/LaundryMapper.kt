@@ -2,11 +2,13 @@ package com.sawe.laundryappapi.utils.mapper
 
 import com.sawe.laundryappapi.dto.LaundryDTO
 import com.sawe.laundryappapi.entity.Laundry
+import lombok.AllArgsConstructor
+import lombok.NoArgsConstructor
+import lombok.RequiredArgsConstructor
 import org.springframework.stereotype.Component
-import org.springframework.stereotype.Service
 
 
-@Service
+@Component @AllArgsConstructor @NoArgsConstructor @RequiredArgsConstructor
 class LaundryMapper: Mapper<LaundryDTO, Laundry> {
     override fun fromEntity(entity: Laundry): LaundryDTO {
         return LaundryDTO(
