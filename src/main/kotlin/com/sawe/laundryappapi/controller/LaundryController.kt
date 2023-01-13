@@ -1,12 +1,17 @@
 package com.sawe.laundryappapi.controller
 
-import org.springframework.web.bind.annotation.GetMapping
+import com.sawe.laundryappapi.dto.LaundryDTO
+import com.sawe.laundryappapi.service.LaundryService
 import org.springframework.web.bind.annotation.RestController
 
 
 @RestController
-class LaundryController {
+class LaundryController(private val laundryService: LaundryService){
 
-    @GetMapping("/api")
-    fun helloWorld() = "Hello World"
+    fun addLaundryServiceShop(laundryDTO: LaundryDTO): LaundryDTO{
+        return laundryService.addLaundryServiceShop(laundryDTO)
+
+    }
+
+
 }
